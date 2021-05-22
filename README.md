@@ -34,7 +34,9 @@
 48-49  
   
   
-    
+   @Test  
+      void everyBranch() {  
+        
 RuntimeException temp;  
   
 temp = assertThrows(RuntimeException.class, () -> SILab2.function(createList(new Time(-3,35,55))));  
@@ -58,9 +60,11 @@ assertEquals(returnList(86400), SILab2.function(createList(new Time(24,0,0))));
   
 List<Time> emptyList = new ArrayList<Time>(0);  
 assertEquals(emptyList, SILab2.function(emptyList));  
+    }  
   
   ## Тест случаи според критериумот Multiple Condition  
-    
+    @Test
+    void multipleCondition() { 
   RuntimeException temp;  
   
 //if (hr < 0 || hr > 24) { //33  
@@ -115,6 +119,8 @@ temp = assertThrows(RuntimeException.class, () -> SILab2.function(createList(new
 assertTrue(temp.getMessage().contains("The time is greater than the maximum"));  
   
 assertEquals(returnList(73550), SILab2.function(createList(new Time(20,25,50))));  
+   
+    }
   
   
    ## Објаснување на напишаните unit tests  
